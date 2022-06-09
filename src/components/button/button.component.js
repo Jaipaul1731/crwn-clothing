@@ -6,8 +6,7 @@ const BUTTON_TYPE_CLASSES={
 }
 
 const Button = ({children,buttonType,...otherProps}) => {
-  console.log('Iam in button type',buttonType)
-  console.log('buttontype',BUTTON_TYPE_CLASSES)
+ 
   return <button className={`button-container ${BUTTON_TYPE_CLASSES[buttonType]}`} {...otherProps}>{children}</button>;
 };
 export default Button;
