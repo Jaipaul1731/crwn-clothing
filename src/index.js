@@ -1,28 +1,31 @@
 import React from "react";
-import { render } from "react-dom";
+// import { render } from "react-dom";
+import { createRoot } from 'react-dom/client';
 import "./index.scss";
 import App from "./App";
 import { UserProvider } from "./context/user.context";
-import { ProductProvider } from "./context/products.context";
+import { CategoriesProvider } from "./context/categories.context";
 import { CartProvieder } from "./context/cart-dropdown.context";
 
 import { BrowserRouter } from "react-router-dom";
 
-const rootElement = document.getElementById("root");
+const container = document.getElementById("root");
+const root = createRoot(container); // createRoot(container!) if you use TypeScript
 
-render(
+
+root.render(
   <React.StrictMode>
     <BrowserRouter>
       <UserProvider>
-        <ProductProvider>
+        <CategoriesProvider>
           <CartProvieder>
           <App />
           </CartProvieder>
          
-        </ProductProvider>
+        </CategoriesProvider>
         
       </UserProvider>
     </BrowserRouter>
   </React.StrictMode>,
-  rootElement
+ 
 );
