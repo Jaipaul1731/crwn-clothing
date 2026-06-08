@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useContext } from "react";
 import {
   createAuthUserFromEmailAndPassword,
   createUserDocumentFromAuth,
@@ -56,7 +56,7 @@ const SignUpForm = () => {
   return (
     <div className="sign-up-container">
       <h2>Don't have an account?</h2>
-      <span>Sign up with you email and password</span>
+      <span>Sign up with yo§u email and password</span>
       <form onSubmit={handleSubmit}>
         <FormInput
           label="Display Name"
